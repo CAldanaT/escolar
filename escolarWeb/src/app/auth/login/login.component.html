@@ -1,0 +1,64 @@
+<div class="justify-content-center align-items-center vh-100 d-flex">
+    <div class="col-sm-3">
+        <div class="p-5 rounded-2">
+            <div class="block-center mt-4 wd-xl">
+                <!-- START card-->
+                <div class="card card-flat">
+                    <img class="img-fluid" src="img/NewPFlogo.jpg" alt="Proforecast" />
+                    <div class="card-body">
+                        <form [formGroup]="loginForm" class="form-validate mb-3" role="form" name="loginForm" novalidate="" (submit)="loginForm($event, loginForm.value)">
+                            <div class="input-group with-focus">
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <mat-icon class="icon-user" style="font-size:18px"></mat-icon>
+                                        <input kendoTextBox class="form-control border-right-0" id="exampleInputEmail1" type="email" name="email" placeholder="Enter email" autocomplete="off" formControlName="email" required="" />
+                                    </div>
+                                </div>
+                                <div class="text-danger" *ngIf="loginForm.controls['email'].hasError('required') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">This field is required</div>
+                                <div class="text-danger" *ngIf="loginForm.controls['email'].hasError('email') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">This field must be a valid email address</div>
+                            </div>
+                            <input
+      #input
+      [style.width.px]="200"
+      [style.marginLeft.px]="5"
+      kendoTextBox
+    />
+                            <div class="input-group with-focus">
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <mat-icon class="icon-lock md" style="font-size:18px"></mat-icon>
+                                        <input kendoTextBox class="form-control border-right-0" id="exampleInputPassword1" type="password" name="password" placeholder="Password" formControlName="password" required="" />
+                                    </div>
+                                </div>
+                                <div class="text-danger" *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">This field is required</div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="checkbox c-checkbox float-left mt0">
+                                    <label>
+                                        <input type="checkbox" value="" name="account_remember" />
+                                        <span class="fa fa-check"></span>Remember Me</label>
+                                </div>
+                                <div class="float-right">
+                                    <a class="text-muted" [routerLink]="'/recover'">Forgot your password?</a>
+                                </div>
+                            </div>
+                            <button class="btn btn-block btn-primary mt-3" type="submit">Login</button>
+                        </form>
+                        <!-- <div class="alert alert-danger text-center" ></div> -->
+                        <p class="pt-3 text-center">Don't have an account?</p>
+                        <a href="https://proforecast.com/support/" class="btn btn-block btn-default">Contact For Pricing</a>
+                    </div>
+                </div>
+                <!-- END card-->
+                <div class="p-3 text-center">
+                    <span>&copy;</span>
+                    <span>{{ setting.getAppSetting('year') }}</span>
+                    <span class="mx-2">-</span>
+                    <span>{{ setting.getAppSetting('name') }}</span>
+                    <br/>
+                    <span>{{ setting.getAppSetting('description') }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
