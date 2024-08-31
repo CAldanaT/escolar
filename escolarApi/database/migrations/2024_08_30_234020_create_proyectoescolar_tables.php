@@ -46,10 +46,13 @@ return new class extends Migration
 
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
-            $table->bigInteger('grado_id');
+            $table->int('trimestre');
+            $table->int('periodo');
             $table->string('gurpo', 2);
+            $table->bigInteger('grado_id');
             $table->bigInteger('escuela_id');
             $table->bigInteger('maestro_id');
+            
 
             $table->primary('id');
             $table->foreign('grado_id')->references('id')->on('catalog');
@@ -112,7 +115,7 @@ return new class extends Migration
             $table->foreign('alumno_id')->references('id')->on('grupos');
         });
 
-        Schema::create('Pa', function (Blueprint $table) {
+        Schema::create('proyectos_academicos', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->bigInteger('grupo_id');
             $table->bigInteger('materia_id');
@@ -120,8 +123,18 @@ return new class extends Migration
             $table->string('name');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('alumnos');
+            $table->foreign('grupo_id')->references('id')->on('grupos');
             $table->foreign('materia_id')->references('id')->on('materias');
+        });
+
+        Schema::create('tareas_pa_alumnos', function (Blueprint $table) {
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('proyecto_academico_id');
+            $table->bigInteger('alumno_id');
+
+            $table->primary('id');
+            $table->foreign('proyecto_academico_id')->references('id')->on('proyectos_academicos');
+            $table->foreign('alumno_id')->references('id')->on('alumnos');
         });
     }
 
@@ -135,5 +148,12 @@ return new class extends Migration
         Schema::dropIfExists('escuelas');
         Schema::dropIfExists('grupos');
         Schema::dropIfExists('maestros');
+        Schema::dropIfExists('materias');
+        Schema::dropIfExists('tutores');
+        Schema::dropIfExists('alumnos');
+        Schema::dropIfExists('tutores_alumnos');
+        Schema::dropIfExists('pase_lista');
+        Schema::dropIfExists('proyectos_academicos');
+        Schema::dropIfExists('tareas_pa_alumnos');
     }
 };
