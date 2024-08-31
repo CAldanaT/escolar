@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            // $table->foreignId('role_id')->index();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -36,11 +35,6 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
-
-        // Schema::create('roles', function (Blueprint $table){ 
-        //     $table->id()->primary();
-        //     $table->string('Name');
-        // });
     }
 
     /**
