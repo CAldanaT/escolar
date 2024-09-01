@@ -163,5 +163,6 @@ return new class extends Migration
         Schema::dropIfExists('pase_lista');
         Schema::dropIfExists('proyectos_academicos');
         Schema::dropIfExists('tareas_pa_alumnos');
+        Schema::dropIfExists('alumnos_grupos');
     }
 };
