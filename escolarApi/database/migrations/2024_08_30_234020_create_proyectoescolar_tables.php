@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('catalog', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('name', 255);
-            $table->int('block');
-            $table->int('item');
+            $table->integer('block');
+            $table->integer('item');
         });
 
         Schema::create('comunidades', function (Blueprint $table) {
@@ -46,8 +46,8 @@ return new class extends Migration
 
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
-            $table->int('trimestre');
-            $table->int('periodo');
+            $table->integer('trimestre');
+            $table->integer('periodo');
             $table->string('gurpo', 2);
             $table->bigInteger('grado_id');
             $table->bigInteger('escuela_id');
@@ -104,22 +104,22 @@ return new class extends Migration
 
         Schema::create('pase_lista', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
+            $table->date('fecha');
+            $table->tinyInteger('asistencia')->default(0);
+            $table->string('comentario', 255);
             $table->bigInteger('grupo_id');
             $table->bigInteger('alumno_id');
-            $table->date('fecha');
-            $table->bit('asistencia');
-            $table->string('comentario');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('alumnos');
-            $table->foreign('alumno_id')->references('id')->on('grupos');
+            $table->foreign('grupo_id')->references('id')->on('grupos');
+            $table->foreign('alumno_id')->references('id')->on('alumnos');
         });
 
         Schema::create('proyectos_academicos', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->bigInteger('grupo_id');
             $table->bigInteger('materia_id');
-            $table->int('total_tareas_proyectos');
+            $table->integer('total_tareas_proyectos');
             $table->string('name');
 
             $table->primary('id');
