@@ -86,10 +86,18 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('curp', 20)->nullable();
             $table->date('fecha_nacimiento')->nullable();
+
+            $table->primary('id');
+        });
+
+        Schema::create('alumnos_grupos', function (Blueprint $table) {
+            $table->bigInteger('id')->autoIncrement();
             $table->bigInteger('grupo_id');
+            $table->bigInteger('alumno_id');
 
             $table->primary('id');
             $table->foreign('grupo_id')->references('id')->on('grupos');
+            $table->foreign('alumno_id')->references('id')->on('alumnos');
         });
 
         Schema::create('tutores_alumnos', function (Blueprint $table) {
