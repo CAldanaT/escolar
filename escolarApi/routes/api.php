@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use APP\Http\Controllers\API\ComunidadesController;
+use APP\Http\Controllers\API\EscuelasController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -26,4 +27,13 @@ Route::prefix('comunidades')->group(function () {
     Route::delete('/{id}',[ PersonController::class, 'delete']);
     Route::get('/{id}',[ PersonController::class, 'get']);
     Route::put('/{id}',[ PersonController::class, 'update']);
+});
+
+Route::prefix('escuelas')->group(function () {
+    Route::get('/',[ PersonController::class, 'getAll']);
+    Route::post('/',[ PersonController::class, 'create']);
+    Route::delete('/{id}',[ PersonController::class, 'delete']);
+    Route::get('/{id}',[ PersonController::class, 'get']);
+    Route::put('/{id}',[ PersonController::class, 'update']);
+    Route::get('/{comunidad}',[ PersonController::class, 'getByComunidad']);
 });
