@@ -7,7 +7,8 @@ declare var $: any;
 @Component({
     selector: 'app-angulargrid',
     templateUrl: './angulargrid.component.html',
-    styleUrls: ['./angulargrid.component.scss']
+    styleUrls: ['./angulargrid.component.scss'],
+    standalone: false
 })
 export class AngulargridComponent implements OnInit, OnDestroy {
 

@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-lock',
     templateUrl: './lock.component.html',
-    styleUrls: ['./lock.component.scss']
+    styleUrls: ['./lock.component.scss'],
+    standalone: false
 })
 export class LockComponent implements OnInit {
 

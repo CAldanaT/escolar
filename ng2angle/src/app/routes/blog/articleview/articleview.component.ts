@@ -14,7 +14,8 @@ Object.prototype.toString = function() {
 @Component({
     selector: 'app-articleview',
     templateUrl: './articleview.component.html',
-    styleUrls: ['./articleview.component.scss']
+    styleUrls: ['./articleview.component.scss'],
+    standalone: false
 })
 export class ArticleviewComponent implements OnInit {
 

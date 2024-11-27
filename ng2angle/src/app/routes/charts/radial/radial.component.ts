@@ -4,7 +4,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-radial',
     templateUrl: './radial.component.html',
-    styleUrls: ['./radial.component.scss']
+    styleUrls: ['./radial.component.scss'],
+    standalone: false
 })
 export class RadialComponent implements OnInit {
 

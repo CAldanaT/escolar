@@ -14,7 +14,8 @@ Object.prototype.toString = function() {
 @Component({
     selector: 'app-compose',
     templateUrl: './compose.component.html',
-    styleUrls: ['./compose.component.scss']
+    styleUrls: ['./compose.component.scss'],
+    standalone: false
 })
 export class ComposeComponent implements OnInit {
 

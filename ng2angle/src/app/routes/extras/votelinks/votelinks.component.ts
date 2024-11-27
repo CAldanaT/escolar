@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-votelinks',
     templateUrl: './votelinks.component.html',
-    styleUrls: ['./votelinks.component.scss']
+    styleUrls: ['./votelinks.component.scss'],
+    standalone: false
 })
 export class VotelinksComponent implements OnInit {
 

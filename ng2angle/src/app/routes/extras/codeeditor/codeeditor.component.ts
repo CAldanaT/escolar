@@ -10,7 +10,8 @@ import { SettingsService } from '../../../core/settings/settings.service';
     selector: 'app-codeeditor',
     templateUrl: './codeeditor.component.html',
     styleUrls: ['./codeeditor.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class CodeeditorComponent implements OnInit, OnDestroy {
 

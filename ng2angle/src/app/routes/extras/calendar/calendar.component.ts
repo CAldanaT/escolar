@@ -9,7 +9,8 @@ import bootstrapPlugin from '@fullcalendar/bootstrap';
 @Component({
     selector: 'app-calendar',
     templateUrl: './calendar.component.html',
-    styleUrls: ['./calendar.component.scss']
+    styleUrls: ['./calendar.component.scss'],
+    standalone: false
 })
 export class CalendarComponent implements OnInit {
     calendarEvents: Array<any> = this.createDemoEvents();

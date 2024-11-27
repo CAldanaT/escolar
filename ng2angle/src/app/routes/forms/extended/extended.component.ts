@@ -5,7 +5,8 @@ import { UntypedFormControl } from '@angular/forms';
     selector: 'app-extended',
     templateUrl: './extended.component.html',
     styleUrls: ['./extended.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class ExtendedComponent implements OnInit {
     // Color Picker

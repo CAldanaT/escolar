@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-google',
     templateUrl: './google.component.html',
-    styleUrls: ['./google.component.scss']
+    styleUrls: ['./google.component.scss'],
+    standalone: false
 })
 export class GoogleComponent implements OnInit {
 

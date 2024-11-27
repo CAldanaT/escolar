@@ -6,7 +6,8 @@ import { CustomValidators } from 'ngx-custom-validators';
 @Component({
     selector: 'app-recover',
     templateUrl: './recover.component.html',
-    styleUrls: ['./recover.component.scss']
+    styleUrls: ['./recover.component.scss'],
+    standalone: false
 })
 export class RecoverComponent implements OnInit {
 

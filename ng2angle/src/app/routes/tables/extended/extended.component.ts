@@ -4,7 +4,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-extended',
     templateUrl: './extended.component.html',
-    styleUrls: ['./extended.component.scss']
+    styleUrls: ['./extended.component.scss'],
+    standalone: false
 })
 export class ExtendedComponent implements OnInit {
 

@@ -4,7 +4,8 @@ import { Product } from './sortable.product';
 @Component({
     selector: 'app-sortable',
     templateUrl: './sortable.component.html',
-    styleUrls: ['./sortable.component.scss']
+    styleUrls: ['./sortable.component.scss'],
+    standalone: false
 })
 export class SortableComponent implements OnInit {
 

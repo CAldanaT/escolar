@@ -4,7 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-forumtopics',
     templateUrl: './forumtopics.component.html',
-    styleUrls: ['./forumtopics.component.scss']
+    styleUrls: ['./forumtopics.component.scss'],
+    standalone: false
 })
 export class ForumtopicsComponent implements OnInit, OnDestroy {
 

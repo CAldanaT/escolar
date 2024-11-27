@@ -8,7 +8,8 @@ import * as moment from 'moment';
 @Component({
     selector: 'app-interaction',
     templateUrl: './interaction.component.html',
-    styleUrls: ['./interaction.component.scss']
+    styleUrls: ['./interaction.component.scss'],
+    standalone: false
 })
 export class InteractionComponent implements OnInit {
 

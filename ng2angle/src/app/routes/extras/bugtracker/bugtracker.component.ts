@@ -5,7 +5,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-bugtracker',
     templateUrl: './bugtracker.component.html',
-    styleUrls: ['./bugtracker.component.scss']
+    styleUrls: ['./bugtracker.component.scss'],
+    standalone: false
 })
 export class BugtrackerComponent implements OnInit {
 

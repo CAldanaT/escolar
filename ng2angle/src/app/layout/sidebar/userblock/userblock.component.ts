@@ -5,7 +5,8 @@ import { UserblockService } from './userblock.service';
 @Component({
     selector: 'app-userblock',
     templateUrl: './userblock.component.html',
-    styleUrls: ['./userblock.component.scss']
+    styleUrls: ['./userblock.component.scss'],
+    standalone: false
 })
 export class UserblockComponent implements OnInit {
     user: any;

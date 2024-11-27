@@ -5,7 +5,8 @@ const swal = require('sweetalert');
 @Component({
     selector: 'app-sweetalert',
     templateUrl: './sweetalert.component.html',
-    styleUrls: ['./sweetalert.component.scss']
+    styleUrls: ['./sweetalert.component.scss'],
+    standalone: false
 })
 export class SweetalertComponent implements OnInit {
 

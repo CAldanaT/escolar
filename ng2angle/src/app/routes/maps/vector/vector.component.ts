@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-vector',
     templateUrl: './vector.component.html',
-    styleUrls: ['./vector.component.scss']
+    styleUrls: ['./vector.component.scss'],
+    standalone: false
 })
 export class VectorComponent implements OnInit {
 

@@ -5,7 +5,8 @@ import { CustomValidators } from 'ngx-custom-validators';
 @Component({
     selector: 'app-validation',
     templateUrl: './validation.component.html',
-    styleUrls: ['./validation.component.scss']
+    styleUrls: ['./validation.component.scss'],
+    standalone: false
 })
 export class ValidationComponent implements OnInit {
 

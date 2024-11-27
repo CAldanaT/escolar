@@ -5,7 +5,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-projectsdetails',
     templateUrl: './projectsdetails.component.html',
-    styleUrls: ['./projectsdetails.component.scss']
+    styleUrls: ['./projectsdetails.component.scss'],
+    standalone: false
 })
 export class ProjectsdetailsComponent implements OnInit {
 

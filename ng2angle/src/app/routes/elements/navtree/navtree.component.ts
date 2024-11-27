@@ -24,7 +24,8 @@ const actionMapping: IActionMapping = {
     selector: 'app-navtree',
     templateUrl: './navtree.component.html',
     styleUrls: ['./navtree.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NavtreeComponent implements OnInit {
     nodes: any[] = [];

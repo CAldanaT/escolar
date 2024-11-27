@@ -5,7 +5,8 @@ import { ChartDataSets, ChartOptions } from 'chart.js';
 @Component({
     selector: 'app-chartjs',
     templateUrl: './chartjs.component.html',
-    styleUrls: ['./chartjs.component.scss']
+    styleUrls: ['./chartjs.component.scss'],
+    standalone: false
 })
 export class ChartjsComponent implements OnInit {
 

@@ -6,7 +6,8 @@ declare var $: any;
 @Component({
     selector: 'app-flot',
     templateUrl: './flot.component.html',
-    styleUrls: ['./flot.component.scss']
+    styleUrls: ['./flot.component.scss'],
+    standalone: false
 })
 export class FlotComponent implements OnInit {
 

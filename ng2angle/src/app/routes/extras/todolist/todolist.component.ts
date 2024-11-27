@@ -4,7 +4,8 @@ declare var $: any;
 @Component({
     selector: 'app-todolist',
     templateUrl: './todolist.component.html',
-    styleUrls: ['./todolist.component.scss']
+    styleUrls: ['./todolist.component.scss'],
+    standalone: false
 })
 export class TodolistComponent implements OnInit {
 

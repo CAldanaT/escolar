@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-orderview',
-  templateUrl: './orderview.component.html',
-  styleUrls: ['./orderview.component.scss']
+    selector: 'app-orderview',
+    templateUrl: './orderview.component.html',
+    styleUrls: ['./orderview.component.scss'],
+    standalone: false
 })
 export class OrderviewComponent implements OnInit {
 

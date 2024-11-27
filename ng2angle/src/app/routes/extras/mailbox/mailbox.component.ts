@@ -4,7 +4,8 @@ import { Router } from "@angular/router";
 @Component({
     selector: 'app-mailbox',
     templateUrl: './mailbox.component.html',
-    styleUrls: ['./mailbox.component.scss']
+    styleUrls: ['./mailbox.component.scss'],
+    standalone: false
 })
 export class MailboxComponent implements OnInit {
 

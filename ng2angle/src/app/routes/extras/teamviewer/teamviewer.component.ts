@@ -5,7 +5,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-teamviewer',
     templateUrl: './teamviewer.component.html',
-    styleUrls: ['./teamviewer.component.scss']
+    styleUrls: ['./teamviewer.component.scss'],
+    standalone: false
 })
 export class TeamviewerComponent implements OnInit {
 

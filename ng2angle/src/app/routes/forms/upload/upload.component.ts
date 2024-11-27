@@ -6,7 +6,8 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 @Component({
     selector: 'app-upload',
     templateUrl: './upload.component.html',
-    styleUrls: ['./upload.component.scss']
+    styleUrls: ['./upload.component.scss'],
+    standalone: false
 })
 export class UploadComponent implements OnInit {
 

@@ -4,7 +4,8 @@ import { ImageCropperComponent, CropperSettings, Bounds } from 'ngx-img-cropper'
 @Component({
     selector: 'app-cropper',
     templateUrl: './cropper.component.html',
-    styleUrls: ['./cropper.component.scss']
+    styleUrls: ['./cropper.component.scss'],
+    standalone: false
 })
 export class CropperComponent implements OnInit {
 

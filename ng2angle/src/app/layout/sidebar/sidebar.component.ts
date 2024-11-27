@@ -8,7 +8,8 @@ import { SettingsService } from '../../core/settings/settings.service';
 @Component({
     selector: 'app-sidebar',
     templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    styleUrls: ['./sidebar.component.scss'],
+    standalone: false
 })
 export class SidebarComponent implements OnInit, OnDestroy {
 

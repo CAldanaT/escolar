@@ -6,7 +6,8 @@ import { ColorsService } from '../../../shared/colors/colors.service';
 @Component({
     selector: 'app-dashboardv2',
     templateUrl: './dashboardv2.component.html',
-    styleUrls: ['./dashboardv2.component.scss']
+    styleUrls: ['./dashboardv2.component.scss'],
+    standalone: false
 })
 export class Dashboardv2Component implements OnInit {
 

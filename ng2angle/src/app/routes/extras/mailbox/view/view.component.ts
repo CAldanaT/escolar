@@ -7,7 +7,8 @@ import { SettingsService } from '../../../../core/settings/settings.service';
 @Component({
     selector: 'app-view',
     templateUrl: './view.component.html',
-    styleUrls: ['./view.component.scss']
+    styleUrls: ['./view.component.scss'],
+    standalone: false
 })
 export class ViewComponent implements OnInit {
 

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-infinitescroll',
     templateUrl: './infinitescroll.component.html',
-    styleUrls: ['./infinitescroll.component.scss']
+    styleUrls: ['./infinitescroll.component.scss'],
+    standalone: false
 })
 export class InfinitescrollComponent implements OnInit {
 

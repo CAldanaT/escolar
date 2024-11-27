@@ -8,7 +8,8 @@ const _clone = (d) => JSON.parse(JSON.stringify(d));
     selector: 'app-ngxdatatable',
     templateUrl: './ngxdatatable.component.html',
     styleUrls: ['./ngxdatatable.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NgxdatatableComponent implements OnInit {
 

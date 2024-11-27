@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 @Component({
     selector: 'app-folder',
     templateUrl: './folder.component.html',
-    styleUrls: ['./folder.component.scss']
+    styleUrls: ['./folder.component.scss'],
+    standalone: false
 })
 export class FolderComponent implements OnInit, OnDestroy {
 
