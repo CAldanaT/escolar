@@ -103,10 +103,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng2angle:build:production"
+              "buildTarget": "ng2angle:build:production"
             },
             "development": {
-              "browserTarget": "ng2angle:build:development"
+              "buildTarget": "ng2angle:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -114,7 +114,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng2angle:build"
+            "buildTarget": "ng2angle:build"
           }
         },
         "test": {
@@ -161,6 +161,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ng2angle"
+  }
 }
