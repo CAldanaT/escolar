@@ -4,7 +4,7 @@ import { ElementRef } from '@angular/core';
 import { TestBed, async, inject } from '@angular/core/testing';
 import { OffsidebarComponent } from './offsidebar.component';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { SettingsService } from '../../core/settings/settings.service';
 import { ThemesService } from '../../core/themes/themes.service';
@@ -20,19 +20,16 @@ describe('Component: Offsidebar', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [
-                TranslateModule.forRoot({
-                    loader: {
-                        provide: TranslateLoader,
-                        useFactory: (createTranslateLoader),
-                        deps: [HttpClient]
-                    }
-                }),
-                HttpClientModule,
-                SharedModule
-            ],
-            providers: [SettingsService, ThemesService, TranslatorService, MockElementRef]
-        }).compileComponents();
+    imports: [TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        }),
+        SharedModule],
+    providers: [SettingsService, ThemesService, TranslatorService, MockElementRef, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
     });
 
     it('should create an instance', async(inject([SettingsService, ThemesService, TranslatorService, MockElementRef],
