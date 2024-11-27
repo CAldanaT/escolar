@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger("id")->autoIncrement();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -30,11 +30,27 @@ return new class extends Migration
 
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
+            $table->bigInteger('user_id');
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
             $table->integer('last_activity')->index();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
+        });
+
+        Schema::create('roles', function (Blueprint $table) {
+            $table->bigInteger("id")->autoIncrement();
+            $table->string('name', 50);
+        });
+
+          Schema::create('user_roles', function (Blueprint $table) {
+            $table->bigInteger("user_id");
+            $table->bigInteger('role_id');
+
+            $table->primary(['user_id','role_id']);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete("cascade");
         });
     }
 
@@ -47,5 +63,6 @@ return new class extends Migration
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
         Scheme::dropIfExists('roles');
+        Scheme::dropIfExists('user_roles');
     }
 };

@@ -46,7 +46,6 @@ return new class extends Migration
 
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
-            $table->integer('trimestre');
             $table->integer('periodo');
             $table->string('gurpo', 2);
             $table->bigInteger('grado_id');
@@ -56,7 +55,7 @@ return new class extends Migration
 
             $table->primary('id');
             $table->foreign('grado_id')->references('id')->on('catalog');
-            $table->foreign('escuela_id')->references('id')->on('escuelas');
+            $table->foreign('escuela_id')->references('id')->on('escuelas')->onDelete("cascade");
             $table->foreign('maestro_id')->references('id')->on('maestros');
         });
 
@@ -66,7 +65,7 @@ return new class extends Migration
             $table->bigInteger('materia_id');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('grupos');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete("cascade");
             $table->foreign('materia_id')->references('id')->on('catalog');
         });
 
@@ -96,8 +95,8 @@ return new class extends Migration
             $table->bigInteger('alumno_id');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('grupos');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete("cascade");
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
         });
 
         Schema::create('tutores_alumnos', function (Blueprint $table) {
@@ -106,7 +105,7 @@ return new class extends Migration
             $table->bigInteger('tutor_id');
 
             $table->primary('id');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
             $table->foreign('tutor_id')->references('id')->on('tutores');
         });
 
@@ -119,8 +118,8 @@ return new class extends Migration
             $table->bigInteger('alumno_id');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('grupos');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete("cascade");
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
         });
 
         Schema::create('proyectos_academicos', function (Blueprint $table) {
@@ -129,9 +128,11 @@ return new class extends Migration
             $table->bigInteger('materia_id');
             $table->integer('total_tareas_proyectos');
             $table->string('name');
+            $table->integer('order');
+            $table->integer('trimestre');
 
             $table->primary('id');
-            $table->foreign('grupo_id')->references('id')->on('grupos');
+            $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete("cascade");
             $table->foreign('materia_id')->references('id')->on('materias');
         });
 
@@ -139,10 +140,11 @@ return new class extends Migration
             $table->bigInteger('id')->autoIncrement();
             $table->bigInteger('proyecto_academico_id');
             $table->bigInteger('alumno_id');
+            $table->integer('order');
 
             $table->primary('id');
-            $table->foreign('proyecto_academico_id')->references('id')->on('proyectos_academicos');
-            $table->foreign('alumno_id')->references('id')->on('alumnos');
+            $table->foreign('proyecto_academico_id')->references('id')->on('proyectos_academicos')->onDelete("cascade");
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
         });
     }
 
