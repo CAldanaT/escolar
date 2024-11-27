@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-extended',
@@ -68,7 +68,7 @@ export class ExtendedComponent implements OnInit {
     // TextMask
     public myModel: string;
     public modelWithValue: string;
-    public formControlInput: FormControl = new FormControl();
+    public formControlInput: UntypedFormControl = new UntypedFormControl();
     public mask: string;
 
     constructor() {

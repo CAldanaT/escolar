@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, UntypedFormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ngx-custom-validators';
 
 @Component({
@@ -9,13 +9,13 @@ import { CustomValidators } from 'ngx-custom-validators';
 })
 export class ValidationComponent implements OnInit {
 
-    valForm: FormGroup;
+    valForm: UntypedFormGroup;
     blackList = ['bad@email.com', 'some@mail.com', 'wrong@email.co'];
 
-    constructor(fb: FormBuilder) {
+    constructor(fb: UntypedFormBuilder) {
 
-        let password = new FormControl('', Validators.required);
-        let certainPassword = new FormControl('', CustomValidators.equalTo(password));
+        let password = new UntypedFormControl('', Validators.required);
+        let certainPassword = new UntypedFormControl('', CustomValidators.equalTo(password));
 
         // Model Driven validation
         this.valForm = fb.group({
@@ -62,19 +62,19 @@ export class ValidationComponent implements OnInit {
     }
 
     minWords(checkValue): ValidatorFn {
-        return <ValidatorFn>((control: FormControl) => {
+        return <ValidatorFn>((control: UntypedFormControl) => {
             return (control.value || '').split(' ').length >= checkValue ? null : { 'minWords': control.value };
         });
     }
 
     maxWords(checkValue): ValidatorFn {
-        return <ValidatorFn>((control: FormControl) => {
+        return <ValidatorFn>((control: UntypedFormControl) => {
             return (control.value || '').split(' ').length <= checkValue ? null : { 'maxWords': control.value };
         });
     }
 
     checkBlackList(list: Array<string>): ValidatorFn {
-        return <ValidatorFn>((control: FormControl) => {
+        return <ValidatorFn>((control: UntypedFormControl) => {
             return list.indexOf(control.value) < 0 ? null : { 'blacklist': control.value };
         });
     }

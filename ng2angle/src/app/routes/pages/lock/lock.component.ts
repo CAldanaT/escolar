@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { SettingsService } from '../../../core/settings/settings.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LockComponent implements OnInit {
 
-    valForm: FormGroup;
+    valForm: UntypedFormGroup;
     router: Router;
 
-    constructor(public settings: SettingsService, fb: FormBuilder, public injector: Injector) {
+    constructor(public settings: SettingsService, fb: UntypedFormBuilder, public injector: Injector) {
 
         this.valForm = fb.group({
             'password': [null, Validators.required]

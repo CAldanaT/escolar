@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../../core/settings/settings.service';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, UntypedFormControl } from '@angular/forms';
 import { CustomValidators } from 'ngx-custom-validators';
 
 @Component({
@@ -10,13 +10,13 @@ import { CustomValidators } from 'ngx-custom-validators';
 })
 export class RegisterComponent implements OnInit {
 
-    valForm: FormGroup;
-    passwordForm: FormGroup;
+    valForm: UntypedFormGroup;
+    passwordForm: UntypedFormGroup;
 
-    constructor(public settings: SettingsService, fb: FormBuilder) {
+    constructor(public settings: SettingsService, fb: UntypedFormBuilder) {
 
-        let password = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,10}$')]));
-        let certainPassword = new FormControl('', [Validators.required, CustomValidators.equalTo(password)]);
+        let password = new UntypedFormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,10}$')]));
+        let certainPassword = new UntypedFormControl('', [Validators.required, CustomValidators.equalTo(password)]);
 
         this.passwordForm = fb.group({
             'password': password,

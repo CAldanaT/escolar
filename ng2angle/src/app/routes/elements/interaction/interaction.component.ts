@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { mergeMap } from 'rxjs/operators';
@@ -18,9 +18,9 @@ export class InteractionComponent implements OnInit {
     public slides: Array<any> = [];
 
     // TYPEAHEAD PROPS
-    public stateCtrl: FormControl = new FormControl();
+    public stateCtrl: UntypedFormControl = new UntypedFormControl();
 
-    public myForm: FormGroup = new FormGroup({
+    public myForm: UntypedFormGroup = new UntypedFormGroup({
         state: this.stateCtrl
     });
 

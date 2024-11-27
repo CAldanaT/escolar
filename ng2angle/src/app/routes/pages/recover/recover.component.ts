@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../../core/settings/settings.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from 'ngx-custom-validators';
 
 @Component({
@@ -10,9 +10,9 @@ import { CustomValidators } from 'ngx-custom-validators';
 })
 export class RecoverComponent implements OnInit {
 
-    valForm: FormGroup;
+    valForm: UntypedFormGroup;
 
-    constructor(public settings: SettingsService, fb: FormBuilder) {
+    constructor(public settings: SettingsService, fb: UntypedFormBuilder) {
         this.valForm = fb.group({
             'email': [null, Validators.compose([Validators.required, CustomValidators.email])]
         });
