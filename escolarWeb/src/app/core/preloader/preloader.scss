@@ -7,8 +7,8 @@
 @import "../../shared/styles/app/variables";
 
 $preloader-bg: $cpInfo;
-$preloader-wd: 100px;
-$preloader-hg: 30px;
+$preloader-wd: 400px;
+$preloader-hg: 120px;
 
 /*@noflip*/
 .preloader {
@@ -39,7 +39,7 @@ $preloader-hg: 30px;
     height: $preloader-hg;
     margin: auto;
     overflow: auto;
-    background-image: url(../../../../public/img/preloaderProforecast/preloader.empty.png);
+    background-image: url(../../../../public/img/preloader/preloader.empty.png);
     background-size: $preloader-wd $preloader-hg;
 }
 
@@ -49,8 +49,8 @@ $preloader-hg: 30px;
     top: 0;
     left: 0;
     bottom: 0;
-    min-width: 10px;
-    background-image: url(../../../../public/img/preloaderProforecast/preloader.full.png);
+    min-width: 50px;
+    background-image: url(../../../../public/img/preloader/preloader.full.png);
     background-size: $preloader-wd $preloader-hg;
 }
 .preloader-hidden {
