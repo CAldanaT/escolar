@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
    returnUrl: string | undefined;
    private unsubscribe: Subscription[] = [];
 
-  constructor(public setting:SettingsService, private fb: FormBuilder, private toaster: ToastrService, private route: ActivatedRoute, private router: Router){
+  constructor(public settings:SettingsService, private fb: FormBuilder, private toaster: ToastrService, private route: ActivatedRoute, private router: Router){
     this.loginForm = FormGroup<any>; 
     this.isLoading$ = Observable<boolean>;
     //this.isLoading$ = this.authService.isLoading$;

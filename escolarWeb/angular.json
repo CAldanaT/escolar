@@ -39,7 +39,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/app/core/preloader/preloader.scss",
-              "src/styles.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [

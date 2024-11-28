@@ -22,8 +22,8 @@ export class SettingsService {
         // App Settings
         // -----------------------------------
         this.app = {
-            name: 'Proforecast',
-            description: 'Forecasting Solution',
+            name: 'Escolar',
+            description: 'Proyecto Escolar',
             year: ((new Date()).getFullYear())
         };
 
