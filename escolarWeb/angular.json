@@ -40,7 +40,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/app/core/preloader/preloader.scss",
               "src/app/shared/styles/bootstrap.scss",
-              "src/app/shared/styles/app.scss"
+              "src/styles/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
