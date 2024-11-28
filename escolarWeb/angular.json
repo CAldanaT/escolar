@@ -38,7 +38,9 @@
               "public/vendor/simple-line-icons/css/simple-line-icons.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/app/core/preloader/preloader.scss"
+              "src/app/core/preloader/preloader.scss",
+              "src/app/shared/styles/bootstrap.scss",
+              "src/app/shared/styles/app.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
