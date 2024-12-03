@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './login.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class LoginComponent implements OnInit, OnDestroy {
    authMsg: string | undefined;
    loginForm: any;
@@ -25,10 +26,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(public settings:SettingsService, private fb: FormBuilder, private toaster: ToastrService, private route: ActivatedRoute, private router: Router){
     this.loginForm = FormGroup<any>; 
     this.isLoading$ = Observable<boolean>;
-    //this.isLoading$ = this.authService.isLoading$;
-     // if(this.authService.isLogued()){
-     //   this.router.navigate(['/app.plans']);
-     // }
+    /*this.isLoading$ = this.authService.isLoading$;
+     if(this.authService.isLogued()){
+       this.router.navigate(['/app.plans']);
+    }*/
   }
 
   ngOnDestroy(): void {
