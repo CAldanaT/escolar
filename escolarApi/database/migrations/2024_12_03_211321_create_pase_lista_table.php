@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pase_lista', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->date('fecha');
             $table->tinyInteger('asistencia')->default(0);
             $table->string('comentario', 255);
-            $table->bigInteger('grupo_id');
-            $table->bigInteger('alumno_id');
+            $table->unsignedBigInteger('grupo_id');
+            $table->unsignedBigInteger('alumno_id');
+            $table->timestamps();
 
-            $table->primary('id');
             $table->foreign('grupo_id')->references('id')->on('grupos')->onDelete("cascade");
             $table->foreign('alumno_id')->references('id')->on('alumnos')->onDelete("cascade");
         });

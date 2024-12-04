@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tutores', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->string('name', 255);
             $table->string('curp', 20)->nullable();
             $table->string('telefono')->nullable();
-            $table->bigInteger('parentesco_id');
+            $table->unsignedBigInteger('parentesco_id');
+            $table->timestamps();
 
-            $table->primary('id');
             $table->foreign('parentesco_id')->references('id')->on('catalog');
         });
     }

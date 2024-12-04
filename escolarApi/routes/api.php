@@ -3,8 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use APP\Http\Controllers\API\ComunidadesController;
-use APP\Http\Controllers\API\EscuelasController;
+use App\Http\Controllers\ComunidadesController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -22,20 +21,19 @@ Route::group([
     });
     
     Route::prefix('comunidades')->group(function () {
-        Route::get('/',[ ComunidadesController::class, 'getAll'])->name('comunidades.getAll');
-        Route::get('/{id}',[ ComunidadesController::class, 'get'])->name('comunidades.get');
-        Route::post('/', [ComunidadesController::class, 'post'])->name('comunidades.post');
-        Route::delete('/{id}', [ComunidadesController::class, 'delete'])->name('comunidades.delete');
-        Route::put('/{id}', [ComunidadesController::class, 'put'])->name('comunidades.put');
+        Route::get('/',[ ComunidadesController::class, 'getAll'])->name('getAll');
+        Route::get('/{id}',[ ComunidadesController::class, 'get'])->name('get');
+        Route::post('/', [ComunidadesController::class, 'post'])->name('post');
+        Route::delete('/{id}', [ComunidadesController::class, 'delete'])->name('delete');
+        Route::put('/{id}', [ComunidadesController::class, 'put'])->name('put');
     });
 
-    Route::prefix('escuelas')->group(function () {
+    /*Route::prefix('escuelas')->group(function () {
         Route::get('/',[ EscuelasController::class, 'getAll'])->name('escuelas.getAll');
         Route::get('/{id}',[ EscuelasController::class, 'get'])->name('escuelas.get');
         Route::post('/', [EscuelasController::class, 'post'])->name('escuelas.post');
         Route::delete('/{id}', [EscuelasController::class, 'delete'])->name('escuelas.delete');
         Route::put('/{id}', [EscuelasController::class, 'put'])->name('escuelas.put');
         Route::get('/{comunidad}',[ EscuelasController::class, 'escuelas.getByComunidad']);
-    });
-
+    });*/
 });

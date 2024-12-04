@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('catalog', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->string('name', 255);
             $table->integer('block');
             $table->integer('item');
+            $table->timestamps();
         });
     }
 

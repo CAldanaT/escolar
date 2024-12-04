@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('grupos', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->integer('periodo');
             $table->string('gurpo', 2);
-            $table->bigInteger('grado_id');
-            $table->bigInteger('escuela_id');
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('grado_id');
+            $table->unsignedBigInteger('escuela_id');
+            $table->unsignedBigInteger('user_id');
+            $table->timestamps();
             
-            $table->primary('id');
             $table->foreign('grado_id')->references('id')->on('catalog');
             $table->foreign('escuela_id')->references('id')->on('escuelas')->onDelete("cascade");
             $table->foreign('user_id')->references('id')->on('users');

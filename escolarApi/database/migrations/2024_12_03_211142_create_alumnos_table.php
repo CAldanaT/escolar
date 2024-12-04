@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alumnos', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->string('name', 255);
             $table->string('curp', 20)->nullable();
             $table->date('fecha_nacimiento')->nullable();
-
-            $table->primary('id');
+            $table->timestamps();
         });
     }
 

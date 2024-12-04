@@ -12,10 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('comunidades', function (Blueprint $table) {
-            $table->bigInteger('id')->autoIncrement();
+            $table->id();
             $table->string('name', 255);
-
-             $table->primary('id');
+            $table->timestamps();
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigInteger("id")->autoIncrement();
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,9 +24,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('telefono')->nullable();
-            $table->bigInteger('escuela_id');
+            $table->unsignedBigInteger('escuela_id');
 
-            $table->primary('id');
             $table->foreign('escuela_id')->references('id')->on('escuelas');
         });
 
@@ -37,8 +36,8 @@ return new class extends Migration
         });
 
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->bigInteger('user_id');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
