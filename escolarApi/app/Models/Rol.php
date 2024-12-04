@@ -5,15 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Escuelas extends Model
+class Rol extends Model
 {
     use HasFactory;
 
-    protected $table = "escuelas";
+    protected $table = "roles";
 
     protected $fillable = [
         'name',
-        'comunidad_id'
     ];
 
+    public function usuarios(){
+        return $this->belongsToMany(User::class, 'use_roles');
+        
+    }
 }

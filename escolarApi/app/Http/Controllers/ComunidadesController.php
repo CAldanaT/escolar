@@ -16,14 +16,6 @@ class ComunidadesController extends Controller
     public function get($id){
         $comunidad = Comunidad::find($id);
 
-        if(!comunidad){
-            $data = [
-                "message" => "Comunidad no encontrada",
-                "status" => 404
-            ];
-            return response()->json($data, 404);
-        }
-
         return response()->json($comunidad, 200);
     }
 
@@ -81,6 +73,14 @@ class ComunidadesController extends Controller
     }
 
     public function put(Request $request,$id){
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
         $comunidad = Comunidad::find($id);
 
         if(!$comunidad){
@@ -92,20 +92,12 @@ class ComunidadesController extends Controller
             return response()->json($data, $data->status);
 
         }
-        
-        $validator = Validator::make(request()->all(), [
-            'name' => 'required'
-        ]);
-
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
 
         $comunidad->name = $request->name;
-        $comunidad->update($data);
+        $comunidad->save();
 
         return response()->json([
-            'message' => "Comunidad Actualizada",
+            'message' => "Comunidad actualizada correctamente",
             'success' => true
         ], 200);
     }

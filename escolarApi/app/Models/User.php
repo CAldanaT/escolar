@@ -21,6 +21,8 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
+        "role_id",
+        "telefono",
     ];
 
     /**
@@ -64,5 +66,15 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function escuela()
+    {
+        return $this->belongsTo(Escuela::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsToMany(Rol::class, 'user_roles');
     }
 }

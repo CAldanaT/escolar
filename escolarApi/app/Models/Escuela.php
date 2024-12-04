@@ -11,10 +11,15 @@ class Escuela extends Model
 
     protected $table = 'escuelas';
 
-    protected $fillable = ["name"];
+    protected $fillable = ["name", "comunidad_id"];
 
     public function comnunidad()
     {
         return $this->belongsTo(Comunidad::class);
+    }
+
+    public function usuarios()
+    {
+        return $this->hasMany(User::class);
     }
 }
