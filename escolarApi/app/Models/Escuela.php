@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comunidad extends Model
+class Escuela extends Model
 {
     use HasFactory;
 
-    protected $table = 'comunidades';
+    protected $table = 'escuelas';
 
     protected $fillable = ["name"];
 
-    public function escuelas()
+    public function comnunidad()
     {
-        return $this->hasMany(Escuelas::class);
+        return $this->belongsTo(Comunidad::class);
     }
 }
