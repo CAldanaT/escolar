@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComunidadesController;
+use App\Http\Controllers\EscuelaController;
+use App\Http\Controllers\RolesControllers;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -28,12 +30,15 @@ Route::group([
         Route::put('/{id}', [ComunidadesController::class, 'put'])->name('put');
     });
 
-    /*Route::prefix('escuelas')->group(function () {
-        Route::get('/',[ EscuelasController::class, 'getAll'])->name('escuelas.getAll');
-        Route::get('/{id}',[ EscuelasController::class, 'get'])->name('escuelas.get');
-        Route::post('/', [EscuelasController::class, 'post'])->name('escuelas.post');
-        Route::delete('/{id}', [EscuelasController::class, 'delete'])->name('escuelas.delete');
-        Route::put('/{id}', [EscuelasController::class, 'put'])->name('escuelas.put');
-        Route::get('/{comunidad}',[ EscuelasController::class, 'escuelas.getByComunidad']);
-    });*/
+    Route::prefix('escuelas')->group(function () {
+        Route::get('/',[ EscuelaController::class, 'getAll'])->name('getAll');
+        Route::get('/{id}',[ EscuelaController::class, 'get'])->name('get');
+        Route::post('/', [EscuelaController::class, 'post'])->name('post');
+        Route::delete('/{id}', [EscuelaController::class, 'delete'])->name('delete');
+        Route::put('/{id}', [EscuelaController::class, 'put'])->name('put');
+    });
+
+    Route::prefix('roles')->group(function () {
+        Route::get('/',[ RolesController::class, 'getAll'])->name('getAll');
+    });
 });

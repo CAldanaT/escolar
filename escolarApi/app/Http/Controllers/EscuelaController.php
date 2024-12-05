@@ -59,8 +59,8 @@ class EscuelaController extends Controller
     public function put(Request $request, $id)
     {
         $validator = Validator::make(request()->all(), [
-            'name' => 'required|string|max:255',
-            'comunidad_id' => 'required|exists:comunidades,id',
+            'name' => 'sometimes|string|max:255',
+            'comunidad_id' => 'sometimes|exists:comunidades,id',
         ]);
 
         if($validator->fails()){
