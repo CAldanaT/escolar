@@ -2,8 +2,8 @@ import { AuthModel } from "./auth.model";
 
 export class UserModel extends AuthModel {
     id?: number;
-    name!: string | undefined;
-    email!: string;
+    name?: string | undefined;
+    email?: string;
     telefono?: string
     roles?: number[];
 

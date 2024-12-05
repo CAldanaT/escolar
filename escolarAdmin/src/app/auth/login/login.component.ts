@@ -70,8 +70,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   
   login($event: any, value: any){
     $event.preventDefault();
-    for (let c in this.loginForm.controls) {
-        this.loginForm.controls[c].markAsTouched();
-    }
+
   }
 }
